@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="countries"></label>
+    <select id="countries">
+      <option value="">Select a city</option>
+      <option value="paris">Paris 🇫🇷</option>
+      <option value="tokyo">Tokyo 🇯🇵</option>
+      <option value="sydney">Sydney 🇦🇺</option>
+    </select>
+  </body>
+  <script>
+    function showSelectedCountry(event) {
+      if (event.target.value.length > 0) {
+        if (event.target.value === "Paris 🇫🇷") {
+          alert("Hi");
+        }
+        if (event.target.value === "Tokyo 🇯🇵") {
+          alert("Kay");
+        }
+        if (event.target.value === "Sydney 🇦🇺") {
+          alert("To");
+        }
+      }
+    }
+
+    let countriesSelect = document.querySelector("#countries");
+    countriesSelect.addEventListener("change", showSelectedCountry);
+  </script>
+</html>
