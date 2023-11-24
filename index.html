@@ -22,8 +22,7 @@
         let cityTime = moment()
           .tz(event.target.value)
           .format("dddd, MMMM D, YYYY hh:mm A");
-        let cityTimezone = moment().tz(event.target.value);
-        alert(`It is ${cityTime} in ${cityTimezone}`);
+        alert(`It is ${cityTime} in ${event.target.value}`);
       }
     }
     let citySelect = document.querySelector("#cities");
