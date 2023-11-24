@@ -6,30 +6,25 @@
     <title>Document</title>
   </head>
   <body>
-    <label for="countries"></label>
-    <select id="countries">
-      <option value="">Select a city</option>
+    <label for="cities"></label>
+    <select id="cities">
+      <option value="city">Select a city</option>
       <option value="paris">Paris 🇫🇷</option>
       <option value="tokyo">Tokyo 🇯🇵</option>
       <option value="sydney">Sydney 🇦🇺</option>
     </select>
   </body>
   <script>
-    function showSelectedCountry(event) {
+    function showSelectedCity(event) {
       if (event.target.value.length > 0) {
-        if (event.target.value === "Paris 🇫🇷") {
-          alert("Hi");
-        }
-        if (event.target.value === "Tokyo 🇯🇵") {
-          alert("Kay");
-        }
-        if (event.target.value === "Sydney 🇦🇺") {
-          alert("To");
-        }
+        let cityTime = moment()
+          .tz(event.target.value)
+          .format("dddd, MMMM D, YYYY hh:mm A");
+        let cityTimezone = moment().tz(event.target.value);
+        alert(`It is ${cityTime} in ${cityTimezone}`);
       }
     }
-
-    let countriesSelect = document.querySelector("#countries");
-    countriesSelect.addEventListener("change", showSelectedCountry);
+    let citySelect = document.querySelector("#cities");
+    citySelect.addEventListener("change", showSelectedCity);
   </script>
 </html>
